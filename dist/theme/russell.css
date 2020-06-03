@@ -186,7 +186,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal h6 {
     color: rgba(0, 0, 0, 0.5);
-    font-size:100%;
+    font-size: 0.8em;
     text-align:right; }
 
 .reveal h6.center {
