@@ -14,13 +14,13 @@
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 
-/* RG - Import fonts if connected to net (not vital thanks to offline support below */
+/* RJG - Import fonts if connected to net (not vital thanks to offline support below */
 /* More here if required: https://fonts.google.com/ */
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Ubuntu:400,700,400italic,700italic);
 @import url("./font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
 
-/* RG - Use local fonts so runs offline if necessary */
+/* RJG - Use local fonts so runs offline if necessary */
 
 /* Quicksand-700 - Latin */
 @font-face {

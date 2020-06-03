@@ -21,7 +21,10 @@
 			<section>
 				<section data-background-image="./images/BG.png" data-background-size="contain" data-background-position="right">
 					<h2>Title</h2>
-					<h5>Russell Garwood<br />russell.garwood@manchester.ac.uk</h5>
+					<h6>Russell Garwood | russell.garwood@manchester.ac.uk<br /><i class="fa fa-github" aria-hidden="true"></i> | <i class="fa fa-twitter"></i> RussellGarwood<br /></h6>
+					<h6>
+						<div id="clock"></div>
+					</h6>
 				</section>
 			</section>
 		</div>
@@ -34,26 +37,54 @@
 
 	<!-- An addition by RJG to pay videos as he likes -->
 	<script>
-		function play_pause(video1)
-		{
+		function play_pause(video1) {
 			var video = document.getElementById(video1);
-			if (video.paused)
-			{
+			if (video.paused) {
 				video.play();
-			}
-			else
-			{
+			} else {
 				video.pause();
 			}
 		};
+	</script>
+
+	<!-- RJG - clock -->
+	<script>
+		var tday = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+		var tmonth = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+
+		function startTime() {
+
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			var nday = today.getDay(),
+				nmonth = today.getMonth(),
+				ndate = today.getDate();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('clock').innerHTML =
+				h + ":" + m + ":" + s + " " + tday[nday] + ", <b>" + tmonth[nmonth] + " " + ndate + "</b>";
+			var t = setTimeout(startTime, 500);
+		}
+
+		function checkTime(i) {
+			if (i < 10) {
+				i = "0" + i
+			}; // add zero in front of numbers < 10
+			return i;
+		}
+
+		window.onload = function() {
+			startTime();
+		}
 	</script>
 
 	<script>
 		// More info about initialization & config:
 		// - https://revealjs.com/initialization/
 		// - https://revealjs.com/config/
-		Reveal.initialize(
-		{
+		Reveal.initialize({
 			hash: true,
 			controls: false,
 
@@ -99,8 +130,7 @@
 			navigationMode: 'default',
 
 			//RJG - modify shortcuts for presenter enter for next slide is useful
-			keyboard:
-			{
+			keyboard: {
 				13: 'next', // go to the next slide when the ENTER key is pressed
 			},
 
